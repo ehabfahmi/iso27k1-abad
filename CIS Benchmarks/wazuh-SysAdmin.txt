@@ -1,0 +1,8 @@
+1- Log Analysis Flow: Logs -> Decoders (Regex) -> Rules (Levels 0-15).
+2- Key Files: - Manager: /var/ossec/etc/ossec.conf
+  -  Agent: /var/ossec/etc/ossec.conf (shared via agent.conf)
+  -  Custom Rules: /var/ossec/etc/rules/local_rules.xml
+  -  Custom Decoders: /var/ossec/etc/decoders/local_decoders.xml
+3- Common Commands:
+  -  Test logs: /var/ossec/bin/wazuh-logtest
+  -  Check status: systemctl status wazuh-manager

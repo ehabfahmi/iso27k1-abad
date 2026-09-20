@@ -1,0 +1,24 @@
+WAZUH EXPERT REFERENCE GUIDE
+1. CORE ARCHITECTURE:
+- Wazuh Indexer: Stores and indexes data.
+- Wazuh Server: Analyzes data using decoders and rules.
+- Wazuh Dashboard: Visualization and management.
+
+2. RULES & DECODERS GUIDELINES:
+- Custom Decoders: Location: /var/ossec/etc/decoders/local_decoder.xml
+- Custom Rules: Location: /var/ossec/etc/rules/local_rules.xml
+- Testing Tool: Always use /var/ossec/bin/wazuh-logtest to verify rules.
+
+3. LOG ANALYSIS WORKFLOW:
+- Identify the log source.
+- Extract the "Full Log" field.
+- Map fields (Source IP, User, Event ID) to the decoder.
+- Assign an alert level (0-15) based on the severity.
+
+4. INTEGRATIONS:
+- Use <integration> tag in ossec.conf for Slack, PagerDuty, and Virustotal.
+- Use 'Custom Integration' scripts in /var/ossec/integrations/ for Jira/TheHive.
+
+5. PERFORMANCE TUNING:
+- Adjust 'queue_size' and 'events_per_second' in ossec.conf to prevent log dropping.
+- Monitor indexer shards and disk watermarks.
